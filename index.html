@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>crud the form with the help of js</title>
+    </head>
+    <body>
+        <form>
+            <input name="name"type="text"placeholder="enter first name">
+            <input name="surname" type="text"placeholder="enter last name">
+            <input name="address" type="text"placeholder=" enter address">
+            <input type="button" value="save"onclick="anil()">
+
+        </form>
+        <hr>
+        <table border=1 id="mytable">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>rakesh</td>
+                    <td>sharma</td>
+                    <td>patna</td>
+                    <td>
+                        <button>view</button>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+     <script>   
+        let x=document.querySelector('input[name="name"]');
+        let y=document.querySelector('input[name="surname"]');
+        let z=document.querySelector('input[name="address"]');
+        let tbdy = document.querySelector('table#mytable tbody');
+        
+        let anil=()=>{
+            alert("sum");
+            console.log(x.value);    
+            console.log(y.value);
+            console.log(z.value);
+            console.log(tbdy);
+            tbdy.innerHTML +=  `<tr>
+                                    <td>${x.value}</td>
+                                    <td>${y.value}</td>
+                                    <td>${z.value}</td>
+                                    <td>
+                                        <button>view</button>
+                                        <button>Edit</button>
+                                        <button onclick="deleteElement(this)">Delete</button>
+                                    </td>
+                                </tr>`;//append technique
+            x.value=y.value=z.value=''
+            
+        }
+        let deleteElement=(a)=>{
+            alert("good morning");
+            console.log(a);
+            a.closest('tr').remove();
+            console.log(a.closest('tr'));
+        }
+     </script>   
+    </body>             
+</html>
