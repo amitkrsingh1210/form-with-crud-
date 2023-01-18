@@ -5,7 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>crud the form with the help of js</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     </head>
+
     <body>
         <form>
             <input name="name"type="text"placeholder="enter first name">
@@ -15,7 +17,7 @@
 
         </form>
         <hr>
-        <table border=1 id="mytable">
+        <table border=1 id="mytable" class="table">
             <thead>
                 <tr>
                     <th>First name</th>
@@ -25,18 +27,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>rakesh</td>
-                    <td>sharma</td>
-                    <td>patna</td>
-                    <td>
-                        <button>view</button>
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </td>
-                </tr>
             </tbody>
         </table>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>   
      <script>   
         let x=document.querySelector('input[name="name"]');
         let y=document.querySelector('input[name="surname"]');
@@ -44,7 +37,8 @@
         let tbdy = document.querySelector('table#mytable tbody');
         
         let anil=()=>{
-            alert("sum");
+            
+            alert("add new details");
             console.log(x.value);    
             console.log(y.value);
             console.log(z.value);
@@ -54,9 +48,9 @@
                                     <td>${y.value}</td>
                                     <td>${z.value}</td>
                                     <td>
-                                        <button>view</button>
-                                        <button>Edit</button>
-                                        <button onclick="deleteElement(this)">Delete</button>
+                                        <button class="btn btn-success" >view</button>
+                                        <button class="btn btn-primary">Edit</button>
+                                        <button class="btn btn-danger" onclick="deleteElement(this)">Delete</button>
                                     </td>
                                 </tr>`;//append technique
             x.value=y.value=z.value=''
@@ -68,6 +62,7 @@
             a.closest('tr').remove();
             console.log(a.closest('tr'));
         }
-     </script>   
+     </script>
+        
     </body>             
 </html>
